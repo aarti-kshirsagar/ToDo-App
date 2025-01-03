@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9; /* Soft light gray */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,17 +12,18 @@ body {
   
   .container {
     width: 90%;
-    max-width: 600px;
-    background-color: #ffffff;
+    max-width: 700px;
+    background-color: #d0cde4; /* White card */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Smooth shadow */
   }
   
   h1 {
     text-align: center;
-    color: #333333;
+    color: #333333; /* Dark gray */
     margin-bottom: 20px;
+    font-size: 2rem;
   }
   
   /* Task Input */
@@ -30,50 +31,59 @@ body {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
   }
   
-  .task-input input, 
+  .task-input input,
   .task-input select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
     flex: 1;
+    background-color: #fdfdfd; /* Subtle background */
   }
   
   .add-button {
-    background-color: #28a745;
+    background-color: #007bff; /* Vibrant blue */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 10px 15px;
     font-size: 14px;
     cursor: pointer;
+    flex: 0 1 auto;
   }
   
   .add-button:hover {
-    background-color: #218838;
+    background-color: #0056b3; /* Darker blue */
   }
   
   /* Filters */
   .filters {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 20px;
   }
   
   .filter-button {
-    background-color: #007bff;
+    background-color: #6c757d; /* Cool gray */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 10px 15px;
     font-size: 14px;
     cursor: pointer;
   }
   
   .filter-button:hover {
-    background-color: #0056b3;
+    background-color: #5a6268; /* Darker gray */
+  }
+  
+  .filter-button.active {
+    background-color: #007bff; /* Active state */
+    color: white;
   }
   
   /* Search Bar */
@@ -81,9 +91,10 @@ body {
     width: 100%;
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
     margin-bottom: 20px;
+    background-color: #fdfdfd;
   }
   
   /* Task List */
@@ -99,42 +110,58 @@ body {
     align-items: center;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Light gray */
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .task:hover {
+    background-color: #e9ecef; /* Slightly darker on hover */
   }
   
   .task.completed {
     text-decoration: line-through;
-    color: gray;
+    color: #6c757d; /* Muted gray */
   }
   
   .high-priority {
-    color: red;
+    color: #dc3545; /* Vibrant red */
     font-weight: bold;
   }
   
   .medium-priority {
-    color: orange;
+    color: #ffc107; /* Amber yellow */
     font-weight: bold;
   }
   
   .low-priority {
-    color: green;
+    color: #28a745; /* Vibrant green */
     font-weight: bold;
   }
   
+  /* Buttons inside tasks */
   .task button {
-    background-color: #dc3545;
-    color: white;
+    background-color: #dc3545; /* Red for delete */
+    color: rgb(192, 225, 245);
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 5px 10px;
     font-size: 12px;
     cursor: pointer;
+    margin-left: 5px;
   }
   
   .task button:hover {
-    background-color: #c82333;
+    background-color: #bd2130; /* Darker red */
   }
+  
+  .task button.complete-button {
+    background-color: #28a745; /* Green for complete */
+  }
+  
+  .task button.complete-button:hover {
+    background-color: #218838; /* Darker green */
+  }
+
   

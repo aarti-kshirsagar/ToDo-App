@@ -4,43 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do App</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .completed { text-decoration: line-through; color: gray; }
-    .high-priority { color: red; }
-    .medium-priority { color: orange; }
-    .low-priority { color: green; }
-    .filters { margin: 10px 0; }
-    .task { display: flex; align-items: center; justify-content: space-between; margin: 5px 0; }
-    .category { font-size: 0.9em; margin-left: 5px; }
-  </style>
+  <link rel="stylesheet" href="ToDo.css">
 </head>
 <body>
-  <h1>To-Do Application</h1>
+  <div class="container">
+    <h1>To-Do Application</h1>
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Add a new task" />
+      <input type="date" id="taskDate" />
+      <select id="taskCategory">
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="College">College</option>
+      </select>
+      <select id="taskPriority">
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <button onclick="addTask()" class="add-button">Add Task</button>
+    </div>
 
-  <input type="text" id="taskInput" placeholder="Add a new task" />
-  <input type="date" id="taskDate" />
-  <select id="taskCategory">
-    <option value="Work">Work</option>
-    <option value="Personal">Personal</option>
-    <option value="College">College</option>
-  </select>
-  <select id="taskPriority">
-    <option value="High">High</option>
-    <option value="Medium">Medium</option>
-    <option value="Low">Low</option>
-  </select>
-  <button onclick="addTask()">Add Task</button>
+    <div class="filters">
+      <button onclick="filterTasks('all')" class="filter-button">All</button>
+      <button onclick="filterTasks('pending')" class="filter-button">Pending</button>
+      <button onclick="filterTasks('completed')" class="filter-button">Completed</button>
+    </div>
 
-  <div class="filters">
-    <button onclick="filterTasks('all')">All</button>
-    <button onclick="filterTasks('pending')">Pending</button>
-    <button onclick="filterTasks('completed')">Completed</button>
+    <input type="text" id="searchInput" placeholder="Search tasks" class="search-bar" oninput="searchTasks()" />
+
+    <ul id="taskList" class="task-list"></ul>
   </div>
-
-  <input type="text" id="searchInput" placeholder="Search tasks" oninput="searchTasks()" />
-
-  <ul id="taskList"></ul>
 
   <script src="ToDo.js"></script>
 </body>
